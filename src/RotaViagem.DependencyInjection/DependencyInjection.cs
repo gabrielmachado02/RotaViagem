@@ -21,22 +21,22 @@ namespace RotaViagem.DependencyInjection
             services.AddScoped<IValidator<RotaInputDto>, RotaInputDtoValidator>();
             services.AddScoped<IValidator<ConsultaRotaDto>, ConsultaRotaDtoValidator>();
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //    options.UseNpgsql(
+            //        configuration.GetConnectionString("DefaultConnection"),
+            //        b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             services.AddScoped<IRotaRepository, RotaRepository>();
 
             return services;
         }
 
-        public static IServiceCollection AddApplication(this IServiceCollection services)
+              public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddScoped<IValidator<RotaInputDto>, RotaInputDtoValidator>();
             services.AddScoped<IValidator<ConsultaRotaDto>, ConsultaRotaDtoValidator>();
-
+            
 
 
             return services;

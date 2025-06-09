@@ -510,6 +510,9 @@ local.settings.json
 # Docker volumes
 docker-data/
 
+# Claude AI assistant files
+.claude/
+
 # Test coverage
 TestResults/
 *.trx

@@ -14,23 +14,11 @@ namespace RotaViagem.Infrastructure.Data
             using var scope = serviceProvider.CreateScope();
             var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-            // As migrations já foram aplicadas pelo entrypoint.sh
-            // Só verifica se já existem dados na tabela
-            try
+            //await dbContext.Database.MigrateAsync();
+
+            if (await dbContext.Rotas.AnyAsync())
             {
-                if (await dbContext.Rotas.AnyAsync())
-                {
-                    return;
-                }
-            }
-            catch
-            {
-                // Se a tabela não existir ainda, aguarda um pouco e tenta novamente
-                await Task.Delay(2000);
-                if (await dbContext.Rotas.AnyAsync())
-                {
-                    return;
-                }
+                return;
             }
 
             var rotasIniciais = new[]
