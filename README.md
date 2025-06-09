@@ -1,5 +1,5 @@
 # Rota Viagem
-
+rode a migration com comando ef database update
 Aplicação para encontrar a rota de viagem mais barata independente da quantidade de conexões.
 
 ## Estrutura do Projeto
