@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(apt-cache policy:*)",
+      "Bash(dotnet new:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(rm:*)",
+      "Bash(docker-compose down:*)",
+      "Bash(docker-compose build:*)",
+      "Bash(docker system prune:*)",
+      "Bash(docker-compose up:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": false
+}
