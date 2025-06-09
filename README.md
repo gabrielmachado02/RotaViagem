@@ -1,5 +1,8 @@
 # Rota Viagem
-rode a migration com comando ef database update
+rode a migration com comando dotnet ef database update
+
+os dados já foram inseridos com database seed
+
 Aplicação para encontrar a rota de viagem mais barata independente da quantidade de conexões.
 
 ## Estrutura do Projeto
